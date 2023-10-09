@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Projet Tech</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;800&display=swap" rel="stylesheet">     
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css" rel="stylesheet" />
+    <link href="assets/stylesheets/mainPage.css" rel="stylesheet" /> 
+    <!-- /!\ j'ai changé output.css en mainPage.css -->
+</head>
+<body>
+
+    <div id="popUp_overlay"></div>
+    <div id="watchCamera">
+        <img src="./assets/img/imgRobotPoppy.jpg" style="height:80%; width:auto;margin-left:300px;margin-top: 20px;">
+    </div>
+
+    <div class="contain-menu">
+        <nav>
+            <img src="./assets/img/logo ProTech.png" alt="logo de notre Projet">
+            <div class="toNavigate">
+            <div id="toRun">
+                <form action="/maPage" method="post" id="send">
+                    <!-- Dans POST tu auras POST : [name => value, name => value ...] i.e ["validForm" => "&#x23E9;" et les input hidden]-->
+                    <input type="submit" value="&#x23E9;" name="validForm" id="validForm">
+                </form>  
+            </div>
+                <div onclick="showWebCam()"> &#x1F3A5;</div>
+                <div onclick="deleteWebCam()"> &#x274C;   </div>
+            </div>
+            <div class="containConnect">
+                <p class="pseudo"> jJoey </p>
+                <button type="button" class="logOut"> &#x21F0; </button>
+            </div>
+        </nav>
+    </div>
+
+    <div class="contain-page">
+        <aside>
+            <div class="divActive"> <p onclick="changeOfSet(this)">Arduino</p> </div> 
+            <div> <p onclick="changeOfSet(this)">Tourner</p> </div>
+            <div> <p onclick="changeOfSet(this)">Déplacer</p> </div>
+            <div> <p onclick="changeOfSet(this)">Attraper</p> </div>
+            <div> <p onclick="changeOfSet(this)">Relacher</p> </div>
+
+            <!--
+                <div> <p onclick="changeOfSet(this)">Tourner</p> </div> Oui
+                <div> <p onclick="changeOfSet(this)"> Tourner </p> </div> Non !!!!!! PAS D'ESPACE
+            -->
+        </aside>
+        <main>
+            <div class="contain-section">
+                <section id="blockSet">
+                    <div class="text">
+                        <h2 id="typeSetOfBlock"> Arduino </h2>
+                        <div id="contain-bloc">
+                        </div>
+                    </div>
+                </section>
+                <section> 
+                    <div class="coder">
+                        <div class="blocToPut"></div>
+                    </div>
+                </section>
+            </div>
+        </main>
+
+    </div>
+
+<script src="assets/js/printBlockSet.js"></script>
+<script src="assets/js/popUp.js"></script>
+<script src="assets/js/playWithBlock.js"></script>
+
+<script>
+    const containBloc = document.getElementById("contain-bloc") ;
+    printSetBlock("Arduino",containBloc);
+
+
+    var compt = 1 ;
+    var valid = document.getElementById("validForm") ;
+
+    valid.addEventListener('mouseover', (e) => { /* 'mouseover : lorsque la souris passe dessus, sans clicker */
+        var setOfCode = document.querySelectorAll(".hasBeenCloned") ; // je regarde tous les ".hasBeenCloned" existants
+        var form = document.getElementById("send") ;
+        setOfCode.forEach(element => {
+            // console.log(element.innerText) ; // Si tu veux voir dans ta console
+            createInputHidden(element.textContent, form) ;
+        });
+    }) ;
+
+
+    function createInputHidden(chaine,form) {
+        let inputHidden = document.createElement("input") ;
+        inputHidden.type = "hidden" ;
+        inputHidden.value = chaine ;
+        inputHidden.name = "bloc" + compt ;
+        compt ++ ;
+
+        form.appendChild(inputHidden) ;
+    }
+</script>
+</body>
+</html>

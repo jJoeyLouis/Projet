@@ -1,0 +1,331 @@
+body {
+    font-family: 'Open Sans', sans-serif;
+    padding: 0;
+    margin: 0;
+    background-color: #ebebeb;
+}
+
+:root{
+    --color-action : #FEE107;
+    --color-action-hover : #fec007 ;
+}
+
+
+
+p,h1,h2{
+    color: #1b1b1b;
+}
+
+/* ------------------------ Menu ----------------------------- */
+.contain-menu{
+    background-color: white;
+    width:100%;
+    height:75px;
+}
+
+nav{
+    width:100%;
+    height:75px;
+    margin:auto;
+
+    display: flex;
+    // flex-direction: row;
+}
+
+nav img {
+    width:180px;
+    height:auto;
+    margin:auto 0;
+    display: block;
+}
+
+.toNavigate{
+    display: flex;
+    flex-direction: row;
+    width:min-content;
+    height:min-content;
+    margin:auto 0;
+    margin-left:12px;
+}
+
+.toNavigate div {
+    font-size:24px;
+    padding:10px 15px;
+    font-weight: 600;
+    border-radius: 20px;
+    cursor:pointer;
+}
+
+.toNavigate div:hover{
+    background-color: rgb(192, 255, 192);
+}
+.toNavigate div:nth-child(3):hover{
+    background-color: rgb(255, 192, 192);
+}
+
+
+.containConnect{
+    display:flex;
+    flex-direction: row;
+    margin:auto;
+    margin-right:0;
+}
+
+// .containConnect button{
+//     border-radius:20px;
+//     background-color: var(--color-action);
+//     color:black;
+//     border:none;
+//     height:32px;
+//     width:auto;
+//     padding:0 24px;
+//     cursor: pointer;
+// }
+
+.pseudo{
+    margin-right:16px;
+    font-weight: 800;
+
+}
+.logOut{
+    font-size: 24px;
+    border-radius:20px;
+    background-color: var(--color-action);
+    color:black;
+    border:none;
+    cursor: pointer;
+
+    height:50px;
+    padding:0 24px;
+    margin-right: 16px;
+}
+
+.containConnect button:hover{
+    background-color: var(--color-action-hover);
+}
+
+a{
+    text-decoration: none;
+}
+#about{
+    color:black;
+}
+
+#logIn{
+    color: black;
+}
+
+
+
+
+/* ------------------------ Main ------------------------------ */
+
+.contain-page{
+    margin:auto;
+    margin-top:20px;
+    width:100%;
+    
+    display:flex;
+    flex-direction: row;
+}
+
+/* -------------- Aside -------------------- */
+
+aside {
+    flex:0.7;
+    /* border:1px solid black; */
+    // height:174px;
+    background-color: white;
+    margin-right:10px;
+    height:fit-content;
+}
+aside div {
+    height:58px;
+    font-weight: 600;
+    padding-left:20px;
+    cursor:pointer;
+    display: flex;
+}
+aside div:hover{
+    background-color: var(--color-action-hover);
+}
+aside .divActive{
+    background-color: var(--color-action);
+}
+aside div p {
+    margin-left:0;
+    font-size:18px;
+}
+
+
+/* ------------------------- Main ------------------------ */
+
+main{
+    flex:4 ;
+    margin:10px;
+    /* border:1px solid black; */
+}
+
+h1{
+    font-size: 36px;
+    font-weight: 400;
+    color: #565656;
+    margin-left:12px;
+}
+
+.contain-section{
+    display:grid;
+    grid-template-columns: 0.7fr 1fr;
+    grid-column-gap:20px;
+}
+
+section {
+    background-color: white;
+}
+#blockSet{
+    height:fit-content;
+}
+.text{
+    margin:30px;
+}
+
+.coder{
+    height:500px;
+    width:100%;
+
+}
+
+h2{
+    font-weight: 600;
+    font-size:20px;
+}
+
+.text p{
+    font-size:15px;
+}
+
+// ----------------------------- Les blocs ------------------------------------
+#contain-bloc{
+    width:80% ;
+    margin:auto;
+}
+
+.bloc{
+    margin:12px 0 ;
+    width:fit-content;
+    padding:12px;
+    border-radius: 10px;
+    cursor:pointer ;
+}
+
+.Tester{
+    background-color: rgb(70, 152, 253);
+    border:rgb(55, 144, 253) ;
+}
+.Tourner{
+    background-color: rgb(253, 222, 70);
+    border:rgb(255, 218, 33) ;
+}
+.Déplacer{
+    background-color: rgb(137, 70, 253);
+    border:rgb(122, 46, 255) ;
+}
+.Attraper{
+    background-color: rgb(253, 171, 70);
+    border:rgb(255, 157, 37) ;
+}
+.Relacher{
+    background-color: rgb(94, 253, 70);
+    border:rgb(66, 255, 37) ;
+}
+
+.blocToPut{
+    display:none ;
+    position:absolute ;
+    height:70px;
+    width:250px;
+    background-color: rgb(186, 186, 186);
+    border-radius: 20px;
+}
+
+// ----------------------------- Login ------------------------------------
+
+.containConnect .active{
+    background-color:var(--color-action) ;
+}
+
+.contain-log{
+    background-color: white;
+    width:570px;
+    margin:auto;
+    margin-top:20px;
+}
+
+.contain-log h1{
+    padding-top:67px;
+    font-size:32px;
+}
+
+.contain-log h1, form{
+    margin-left:60px;
+}
+
+input{
+    height:45px;
+    width:438px;
+    margin-top:20px;
+    font-size:16px;
+    border:1px solid grey;
+    // outline: none;
+    padding-left: 12px;
+}
+
+input:focus{
+    outline: 2px solid #72ac51 ;
+}
+
+input[name="username"]:invalid{
+    outline:none;
+    outline: 2px solid red;
+}
+
+input[type="submit"]{
+    width:450px;
+    height:42px;
+    font-size: 14px;
+    margin-bottom: 60px;
+    background-color: #72ac51;
+    color: white;
+    border:none;
+    border-radius:20px;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover{
+    background-color: #47752d;
+}
+
+// ---------------------------------- Pop Up -------------------------------
+#popUp_overlay{
+    position: absolute;
+    z-index: 3;
+    top:75px;
+    left:0;
+    right:0;
+    bottom: 0;
+
+    background-color: rgba(0, 0, 0, 0.34);
+    display: none;
+}
+
+#watchCamera{
+    position: absolute;
+    z-index: 4;
+    background-color: white;
+    top:85px;
+    bottom:50px ;
+    right:12px ;
+    left:200px;
+
+    display: none;
+}
